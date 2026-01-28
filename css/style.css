@@ -1,179 +1,130 @@
-:root {
-  --black-charcoal: #121212;
-  --white-marble: #f9f9f9;
-  --neutral-grey: #c4c4c4;
-  --accent-color: #00ffff; /* You can change this later */
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
-  background-color: var(--white-marble);
-  color: var(--black-charcoal);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+  line-height: 1.6;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.invert-logo {
-  filter: brightness(0) invert(1);
-}
-
+/* Navbar */
 .navbar {
-  height: 120px;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
+  background-color: #000;
+  padding: 30px;
 }
 
 .nav-link {
-  font-size: 1.1rem;
-  padding: 0.5rem 1rem;
+  color: #fff !important;
+  font-weight: 500;
+  font-size: x-large;
 }
 
-#hero {
-  height: 100vh;
-  /*     background: url('../assets/img/hero-bg.jpg') center/cover no-repeat;
- */
-  background-color: var(--black-charcoal);
-  padding-top: 40px;
+.nav-link:hover {
+  text-decoration: underline;
 }
 
-#hero img {
-  object-fit: cover;
-  height: 100vh;
-}
-
-#hero h1 {
-  font-size: 4rem;
-  font-weight: bold;
-  color: var(--accent-color);
-}
-
-.about-img {
-  width: 250px;
-  height: 250px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.boje-logo {
+  height: 80px; 
+  filter: brightness(0) invert(1); /* Makes dark logo white on black */
   transition: transform 0.3s ease;
 }
 
-.about-img:hover {
+.boje-logo:hover {
   transform: scale(1.05);
 }
 
+/* Hero */
+#hero {
+  margin-top: 70px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 80vh;
+}
+
+/* Sections */
+section {
+  padding: 2rem 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* About + Text */
+#about img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Discography + Music Cards */
 .album-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.album-card:hover {
-  transform: translateY(-20px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#music iframe,
-#music video {
   width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Contact Form */
+form label {
+  font-weight: bold;
+}
+
+.btn-dark {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+.btn-dark:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer-icon img {
+  filter: invert(1); /* Invert black icons to white */
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.footer-icon-img:hover {
+  transform: scale(1.1);
+}
+
+.footer-icon {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+/* Optional: ensure large icons don’t break layout */
+footer img {
+  max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
-}
-
-.spotify-embed {
-  max-width: 700px;
-  height: 600px;
-}
-
-footer {
-  background-color: var(--black-charcoal);
-  color: var(--white-marble);
-}
-
-.contact-icon img,
-.footer-icon img {
-  width: 36px;
-  height: 36px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Contact section (white background) - show icons in black */
-.contact-icon img {
-  filter: brightness(0); /* makes icon black */
-}
-
-.contact-icon:hover img {
-  transform: scale(1.2);
-  filter: brightness(0.5);
-}
-
-/* Footer (black background) - show icons in white */
-.footer-icon img {
-  width: 36px;
-  height: 36px;
-  transition: transform 0.3s ease;
-  filter: brightness(0) invert(1);
-}
-
-.footer-icon:hover img {
-  transform: scale(1.2);
-}
-
-.page-wrapper {
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 
 @media (min-width: 768px) {
-  .page-wrapper {
-    padding-left: 10%;
-    padding-right: 10%;
-  }
-}
-
-iframe {
-  width: 100%;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    background-color: rgba(18, 18, 18, 0.95); /* matches --black-charcoal, with opacity */
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 0.5rem;
+  h2 {
+    font-size: 2rem;
   }
 
-  .navbar-collapse .nav-link {
-    color: var(--white-marble) !important;
+  section {
+    padding: 3rem 2rem;
   }
 
-  .navbar-collapse .nav-link:hover {
-    color: var(--accent-color) !important;
+  .footer-icon img {
+    width: 40px;
+    height: 40px;
   }
-}
-
-.card iframe,
-.card video {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 0.5rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  display: block;
 }

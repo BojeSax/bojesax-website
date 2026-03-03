@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home"
+        file: "content/home.json"
+        format: "json"
+        fields:
+          - { label: "Slider Images (max 5)", name: "slider", widget: "list", max: 5, field: { label: "Image", name: "image", widget: "image" } }
+          - { label: "About Image", name: "aboutImage", widget: "image" }
+          - label: "About Paragraphs"
+            name: "aboutText"
+            widget: "list"
+            field: 
+              { label: "Paragraph", widget: "text" }
+
+      - name: "music"
+        label: "Music"
+        file: "content/music.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string", hint: "Max 120 chars", pattern: ["^.{0,120}$", "Max 120 characters"] }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Music Cards"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1 }
+              - { label: "Embed (Spotify/SoundCloud iframe)", name: "embed", widget: "text" }
+              - { label: "Title", name: "cardTitle", widget: "string", pattern: ["^.{0,120}$", "Max 120 characters"] }
+              - { label: "Description", name: "cardDescription", widget: "string", pattern: ["^.{0,200}$", "Max 200 characters"] }
+
+      - name: "videos"
+        label: "Videos"
+        file: "content/videos.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string", hint: "Max 120 chars", pattern: ["^.{0,120}$", "Max 120 characters"] }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Video Cards"
+            name: "cards"
+            widget: "list"
+            fields:
+              - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1 }
+              - { label: "YouTube Embed (iframe)", name: "embed", widget: "text" }
+              - { label: "Text", name: "text", widget: "string", pattern: ["^.{0,250}$", "Max 250 characters"] }
+
+      - name: "contact"
+        label: "Contact / Book Boje"
+        file: "content/contact.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string", pattern: ["^.{0,120}$", "Max 120 characters"] }
+          - { label: "Description", name: "description", widget: "string", pattern: ["^.{0,300}$", "Max 300 characters"] }

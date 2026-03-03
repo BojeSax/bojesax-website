@@ -22,7 +22,7 @@ collections:
             name: "aboutText"
             widget: "list"
             field: 
-              { label: "Paragraph", widget: "text" }
+              { label: "Paragraph", name: "paragraph", widget: "text" }
 
       - name: "music"
         label: "Music"

@@ -1,4 +1,5 @@
 async function loadHomeContent() {
+
     try {
       const res = await fetch("/content/home.json", { cache: "no-store" });
       if (!res.ok) throw new Error(`home.json ${res.status}`);
@@ -7,10 +8,38 @@ async function loadHomeContent() {
   
       renderSlider(data?.slider);
       renderAbout(data?.aboutImage, data?.aboutText);
+
+      window.__homeData = data;
   
     } catch (error) {
       console.error("Error loading home content:", error);
     }
+  }
+
+  function getLang() {
+    return localStorage.getItem("lang") || "en";
+  }
+  
+  function pickLang(obj, lang) {
+    if (!obj || typeof obj !== "object") return "";
+    return (obj[lang] || obj.en || obj.es || "").trim();
+  }
+
+  function startSlider() {
+    const slides = document.querySelectorAll(".carousel-item");
+    if (!slides.length) return;
+  
+    let current = 0;
+  
+    slides[current].classList.add("active");
+  
+    setInterval(() => {
+      slides[current].classList.remove("active");
+  
+      current = (current + 1) % slides.length;
+  
+      slides[current].classList.add("active");
+    }, 5000);
   }
   
   function renderSlider(slider) {
@@ -48,33 +77,18 @@ async function loadHomeContent() {
         `
       )
       .join("");
-  
-    // (Re)initialize Bootstrap carousel after injecting slides
-    try {
-      const existing = bootstrap.Carousel.getInstance(carouselEl);
-      if (existing) existing.dispose();
-      new bootstrap.Carousel(carouselEl, {
-        interval: 4500,
-        ride: "carousel",
-        pause: false,
-        touch: true,
-        wrap: true
-      });
-    } catch (e) {
-      console.warn("Bootstrap Carousel init failed:", e);
-    }
+
+    startSlider();
   }
   
   function renderAbout(image, paragraphs) {
     const aboutImage = document.querySelector("#about img");
     const aboutTextContainer = document.getElementById("aboutText");
   
-    // Image: only replace if CMS provides one
     if (aboutImage && typeof image === "string" && image.trim()) {
       aboutImage.src = image;
     }
   
-    // Text: show nothing unless CMS has paragraphs
     if (!aboutTextContainer) return;
   
     if (!Array.isArray(paragraphs) || paragraphs.length === 0) {
@@ -82,13 +96,19 @@ async function loadHomeContent() {
       return;
     }
   
+    const lang = getLang();
+  
     aboutTextContainer.innerHTML = paragraphs
-        .map((text) => {
-            const clean = typeof text === "string" ? text.trim() : "";
-            if (!clean) return "";
-            return `<p>${escapeHtml(clean)}</p>`;
-        })
-        .join("");
+      .map((p) => {
+        const text =
+          typeof p === "string"
+            ? p.trim()
+            : pickLang(p, lang);
+  
+        if (!text) return "";
+        return `<p>${escapeHtml(text)}</p>`;
+      })
+      .join("");
   }
   
   // Small safety helper (prevents breaking HTML if someone pastes weird chars)
@@ -102,3 +122,10 @@ async function loadHomeContent() {
   }
   
   document.addEventListener("DOMContentLoaded", loadHomeContent);
+
+  window.addEventListener("lang:change", () => {
+    const data = window.__homeData;
+    if (!data) return;
+  
+    renderAbout(data?.aboutImage, data?.aboutText);
+  });

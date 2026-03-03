@@ -1,130 +1,345 @@
-/* Base Reset */
+/* ===================================
+   1. RESET
+=================================== */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  color: #000;
-  background-color: #fff;
+  background: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #000;
-  padding: 30px;
+/* ===================================
+   2. BRAND SYSTEM
+=================================== */
+
+:root {
+  --color-bg: #121212;
+  --color-surface: #1a1a1a;
+  --color-text: #f5f5f5;
+  --color-muted: #a0a0a0;
+  --color-border: #2a2a2a;
+
+  --color-accent: #c9a227;
+
+  --container-width: 1200px;
+  --radius-md: 12px;
 }
 
-.nav-link {
-  color: #fff !important;
-  font-weight: 500;
-  font-size: x-large;
-}
+/* ===================================
+   3. LAYOUT
+=================================== */
 
-.nav-link:hover {
-  text-decoration: underline;
-}
-
-.boje-logo {
-  height: 80px; 
-  filter: brightness(0) invert(1); /* Makes dark logo white on black */
-  transition: transform 0.3s ease;
-}
-
-.boje-logo:hover {
-  transform: scale(1.05);
-}
-
-/* Hero */
-#hero {
-  margin-top: 70px;
-}
-
-.carousel-item img {
-  object-fit: cover;
-  height: 80vh;
-}
-
-/* Sections */
-section {
-  padding: 2rem 1rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* About + Text */
-#about img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-/* Discography + Music Cards */
-.album-card {
-  width: 100%;
-  max-width: 280px;
+.wrapper {
+  width: 90%;
+  max-width: var(--container-width);
   margin: 0 auto;
 }
 
-/* Contact Form */
-form label {
-  font-weight: bold;
+.section {
+  padding: 100px 0;
 }
 
-.btn-dark {
-  background-color: #000;
-  color: #fff;
+/* ===================================
+   4. NAVBAR
+=================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 0 25px 0;
+  position: relative; /* Needed for centered toggle */
+}
+
+/* Left logo */
+.boje-logo {
+  height: 70px;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+}
+
+/* LANGUAGE TOGGLE (CENTER) */
+.lang-toggle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.lang-btn {
+  background: none;
   border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 
-.btn-dark:hover {
-  opacity: 0.9;
+.lang-btn.active {
+  color: var(--color-accent);
 }
 
-/* Footer */
+/* BURGER MENU */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.burger span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-text);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-surface);
+    flex-direction: column;
+    width: 220px;
+    padding: 25px;
+    display: none;
+    border: 1px solid var(--color-border);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+  }
+}
+/* ===================================
+   5. HERO
+=================================== */
+
+#hero {
+  height: 100vh;
+  margin-top: 110px;
+  overflow: hidden;
+  position: relative;
+}
+
+#heroCarousel {
+  height: 100%;
+}
+
+.carousel-inner {
+  height: 100%;
+  position: relative;
+}
+
+.carousel-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================================
+   6. ABOUT
+=================================== */
+
+#about {
+  margin-top: 60px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+#aboutText p {
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===================================
+/* =========================
+   MUSIC SECTION
+========================= */
+
+#musicCards {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Card */
+
+.music-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Inner layout */
+
+.music-card-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 300px;
+}
+
+/* Embed */
+
+.music-embed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #000;
+}
+
+.music-embed iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 352px; 
+  border: none;
+  border-radius: 12px;
+}
+
+/* Content */
+
+.music-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.music-card-title {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.music-card-desc {
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Desktop 30 / 70 */
+
+@media (min-width: 900px) {
+  .music-card-inner {
+    grid-template-columns: 40% 60%;
+  }
+
+  .music-embed iframe {
+    min-height: 100%;
+  }
+}
+
+/* ===================================
+   8. FOOTER
+=================================== */
+
+footer {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
 .footer-icon img {
-  filter: invert(1); /* Invert black icons to white */
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  display: inline-block;
-  transition: transform 0.2s ease;
+  width: 30px;
+  filter: invert(1);
+  transition: transform 0.3s ease;
 }
 
-.footer-icon-img:hover {
+.footer-icon img:hover {
   transform: scale(1.1);
 }
 
-.footer-icon {
-  display: inline-block;
-  margin: 0 8px;
-}
-
-/* Optional: ensure large icons don’t break layout */
-footer img {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (min-width: 768px) {
-  h2 {
-    font-size: 2rem;
-  }
-
-  section {
-    padding: 3rem 2rem;
-  }
-
-  .footer-icon img {
-    width: 40px;
-    height: 40px;
-  }
+footer p {
+  color: var(--color-muted);
+  font-size: 14px;
 }

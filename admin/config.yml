@@ -23,29 +23,60 @@ collections:
             field:
               label: "Image"
               widget: "image"
+
           - { label: "About Image", name: "aboutImage", widget: "image" }
+
           - label: "About Paragraphs"
             name: "aboutText"
             widget: "list"
-            field: 
-              label: "Paragraph"
-              widget: "text"
+            fields:
+              - label: "English"
+                name: "en"
+                widget: "text"
+              - label: "Spanish"
+                name: "es"
+                widget: "text"
 
       - name: "music"
         label: "Music"
         file: "content/music.json"
         format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string", hint: "Max 120 chars", pattern: ["^.{0,120}$", "Max 120 characters"] }
-          - { label: "Description", name: "description", widget: "text" }
+
+          - label: "Title"
+            name: "title"
+            widget: "object"
+            fields:
+              - { label: "English", name: "en", widget: "string" }
+              - { label: "Spanish", name: "es", widget: "string" }
+
+          - label: "Description"
+            name: "description"
+            widget: "object"
+            fields:
+              - { label: "English", name: "en", widget: "text" }
+              - { label: "Spanish", name: "es", widget: "text" }
+
           - label: "Music Cards"
             name: "cards"
             widget: "list"
             fields:
               - { label: "Order", name: "order", widget: "number", value_type: "int", min: 1 }
               - { label: "Embed (Spotify/SoundCloud iframe)", name: "embed", widget: "text" }
-              - { label: "Title", name: "cardTitle", widget: "string", pattern: ["^.{0,120}$", "Max 120 characters"] }
-              - { label: "Description", name: "cardDescription", widget: "string", pattern: ["^.{0,200}$", "Max 200 characters"] }
+
+              - label: "Title"
+                name: "cardTitle"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Spanish", name: "es", widget: "string" }
+
+              - label: "Description"
+                name: "cardDescription"
+                widget: "object"
+                fields:
+                  - { label: "English", name: "en", widget: "string" }
+                  - { label: "Spanish", name: "es", widget: "string" }
 
       - name: "videos"
         label: "Videos"

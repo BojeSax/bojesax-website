@@ -7,11 +7,18 @@
     "/assets/uploads/slider5.png"
   ],
   "aboutImage": "/assets/uploads/boje.jpg",
-  "aboutText":  [
-    "Böje is an Andalusian saxophonist and producer who bridges tradition and modernity through sound. A musician since the age of eight, he blends the pulse of electronic music with the expressive depth of jazz, rock, blues, and flamenco, creating a style that feels both contemporary and deeply rooted.",
-
-    "Guided by the saxophone as his most personal voice, Böje shapes immersive soundscapes where rhythm and emotion coexist. His music is driven by groove and atmosphere, balancing raw feeling with refined production.",
-
-    "Whether performing live or producing in the studio, Böje focuses on connection — crafting musical journeys that invite movement, introspection, and shared experience beyond genres."
+  "aboutText": [
+    {
+      "en": "Böje is an Andalusian saxophonist and producer who bridges tradition and modernity through sound. A musician since the age of eight, he blends the pulse of electronic music with the expressive depth of jazz, rock, blues, and flamenco, creating a style that feels both contemporary and deeply rooted.",
+      "es": "Böje es un saxofonista y productor andaluz que conecta tradición y modernidad a través del sonido. Músico desde los ocho años, combina el pulso de la música electrónica con la profundidad expresiva del jazz, rock, blues y flamenco, creando un estilo actual y con raíces."
+    },
+    {
+      "en": "Guided by the saxophone as his most personal voice, Böje shapes immersive soundscapes where rhythm and emotion coexist. His music is driven by groove and atmosphere, balancing raw feeling with refined production.",
+      "es": "Guiado por el saxofón como su voz más personal, Böje crea paisajes sonoros inmersivos donde conviven ritmo y emoción. Su música se mueve entre groove y atmósfera, equilibrando la emoción cruda con una producción cuidada."
+    },
+    {
+      "en": "Whether performing live or producing in the studio, Böje focuses on connection — crafting musical journeys that invite movement, introspection, and shared experience beyond genres.",
+      "es": "Ya sea en directo o en el estudio, Böje busca la conexión: construye viajes musicales que invitan al movimiento, la introspección y la experiencia compartida más allá de los géneros."
+    }
   ]
 }

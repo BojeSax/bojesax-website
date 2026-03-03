@@ -4,70 +4,68 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BOJE — Sax & DJ</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top px-4">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/Boje-Logo.png" alt="BOJE Logo" class="boje-logo" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="music.html">Music</a></li>
-          <li class="nav-item"><a class="nav-link" href="video.html">Video</a></li>
-          <li class="nav-item"><a class="nav-link" href="photos.html">Photos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <nav class="navbar">
+    <div class="wrapper navbar-inner">
+  
+      <!-- Left -->
+      <div class="nav-left">
+        <img src="assets/img/Boje-Logo.png" class="boje-logo" />
       </div>
+  
+      <!-- Center Language Toggle -->
+      <div class="lang-toggle">
+        <button data-lang="en" class="lang-btn active">EN</button>
+        <span>|</span>
+        <button data-lang="es" class="lang-btn">ES</button>
+      </div>
+  
+      <!-- Right -->
+      <div class="nav-right">
+        <button class="burger" id="burgerBtn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+  
+        <div class="nav-links" id="navMenu">
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="music.html" data-i18n="nav_music">Music</a>
+          <a href="video.html" data-i18n="nav_video">Video</a>
+          <a href="contact.html" data-i18n="nav_contact">Contact</a>
+        </div>
+      </div>
+  
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section id="hero" class="position-relative">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="assets/img/sample1.jpg" class="d-block w-100 vh-100 object-fit-cover" alt="Hero Image 1" />
+  <section id="hero">
+    <div id="heroCarousel">
+      <div class="carousel-inner"></div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="wrapper">
+      <div class="about-grid">
+        <div>
+          <img src="assets/img/boje.jpg" alt="Böje" />
         </div>
-        <div class="carousel-item">
-          <img src="assets/img/sample2.jpg" class="d-block w-100 vh-100 object-fit-cover" alt="Hero Image 2" />
-        </div>
-        <div class="carousel-item">
-          <img src="assets/img/sample3.jpg" class="d-block w-100 vh-100 object-fit-cover" alt="Hero Image 3" />
-        </div>
+        <div id="aboutText"></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="container py-5">
-    <h2 class="text-center mb-4">About Me</h2>
-    <div class="row">
-      
-      <div class="col-md-6" >
-        <img src="assets/img/boje.jpg" class="img-fluid rounded shadow" alt="Boje" />
-      </div>
-
-      <div class="col-md-6" id="aboutText"></div>
-
-    </div>
-  </section>
-
-<!-- FOOTER -->
-<footer class="py-4 text-white" style="background-color: #121212;">
-  <div class="container text-center">
+  <footer>
+    <div class="wrapper">
+      <div class="footer-icons">
+            <!-- Icons -->
     
-    <!-- Icons -->
-    <div class="d-flex justify-content-center flex-wrap gap-4 mb-3">
       <a href="https://www.instagram.com/bojesax" target="_blank" class="footer-icon">
         <img src="assets/icons/instagram.svg" alt="Instagram" class="footer-icon-img"/>
       </a>
@@ -91,19 +89,18 @@
       <a href="https://linktr.ee/bojesax" target="_blank" class="footer-icon">
         <img src="assets/icons/linktree.svg" alt="Linktree" class="footer-icon-img"/>
       </a>
+      </div>
+      <p class="mb-1">© 2025 BOJE. All rights reserved.</p>
+      <p class="small text-white mb-0">
+        A <a href="https://craftlab-studio.com" target="_blank" class="text-white text-decoration-underline">CraftLab Studio</a> project — Built by hand. Designed with soul.
+      </p>
     </div>
+  </footer>
 
-    <!-- Text -->
-    <p class="mb-1">© 2025 BOJE. All rights reserved.</p>
-    <p class="small text-white mb-0">
-      A <a href="https://craftlab-studio.com" target="_blank" class="text-white text-decoration-underline">CraftLab Studio</a> project — Built by hand. Designed with soul.
-    </p>
-  </div>
-</footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/navigation.js"></script>
   <script src="js/homeRender.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
 </body>
 </html>

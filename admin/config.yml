@@ -16,13 +16,20 @@ collections:
         file: "content/home.json"
         format: "json"
         fields:
-          - { label: "Slider Images (max 5)", name: "slider", widget: "list", max: 5, field: { label: "Image", name: "image", widget: "image" } }
+          - label: "Slider Images (max 5)"
+            name: "slider"
+            widget: "list"
+            max: 5
+            field:
+              label: "Image"
+              widget: "image"
           - { label: "About Image", name: "aboutImage", widget: "image" }
           - label: "About Paragraphs"
             name: "aboutText"
             widget: "list"
             field: 
-              { label: "Paragraph", name: "paragraph", widget: "text" }
+              label: "Paragraph"
+              widget: "text"
 
       - name: "music"
         label: "Music"

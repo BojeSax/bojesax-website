@@ -14,8 +14,9 @@ async function loadHomeContent() {
   }
   
   function renderSlider(slider) {
-    const carouselInner = document.querySelector("#heroCarousel .carousel-inner");
-    if (!carouselInner) return;
+    const carouselEl = document.getElementById("heroCarousel");
+    const carouselInner = carouselEl?.querySelector(".carousel-inner");
+    if (!carouselEl || !carouselInner) return;
   
     // Show nothing unless CMS has images
     if (!Array.isArray(slider) || slider.length === 0) {
@@ -23,18 +24,45 @@ async function loadHomeContent() {
       return;
     }
   
-    carouselInner.innerHTML = slider
-      .map((item, index) => {
-        const activeClass = index === 0 ? "active" : "";
-        const src = item?.image;
-        if (!src) return "";
-        return `
-          <div class="carousel-item ${activeClass}">
-            <img src="${src}" class="d-block w-100 vh-100 object-fit-cover" alt="Böje slide ${index + 1}" />
+    // Normalize: allow ["path"] or [{image:"path"}]
+    const paths = slider
+      .map((item) => (typeof item === "string" ? item : item?.image))
+      .map((x) => (typeof x === "string" ? x.trim() : ""))
+      .filter(Boolean);
+  
+    if (paths.length === 0) {
+      carouselInner.innerHTML = "";
+      return;
+    }
+  
+    carouselInner.innerHTML = paths
+      .map(
+        (src, index) => `
+          <div class="carousel-item ${index === 0 ? "active" : ""}">
+            <img
+              src="${src}"
+              class="d-block w-100 vh-100 object-fit-cover"
+              alt="Böje slide ${index + 1}"
+            />
           </div>
-        `;
-      })
+        `
+      )
       .join("");
+  
+    // (Re)initialize Bootstrap carousel after injecting slides
+    try {
+      const existing = bootstrap.Carousel.getInstance(carouselEl);
+      if (existing) existing.dispose();
+      new bootstrap.Carousel(carouselEl, {
+        interval: 4500,
+        ride: "carousel",
+        pause: false,
+        touch: true,
+        wrap: true
+      });
+    } catch (e) {
+      console.warn("Bootstrap Carousel init failed:", e);
+    }
   }
   
   function renderAbout(image, paragraphs) {
@@ -55,12 +83,12 @@ async function loadHomeContent() {
     }
   
     aboutTextContainer.innerHTML = paragraphs
-      .map((p) => {
-        const text = p?.paragraph?.trim();
-        if (!text) return "";
-        return `<p>${escapeHtml(text)}</p>`;
-      })
-      .join("");
+        .map((text) => {
+            const clean = typeof text === "string" ? text.trim() : "";
+            if (!clean) return "";
+            return `<p>${escapeHtml(clean)}</p>`;
+        })
+        .join("");
   }
   
   // Small safety helper (prevents breaking HTML if someone pastes weird chars)

@@ -58,8 +58,15 @@ async function loadMusicContent() {
   function renderOneCard(card) {
     const lang = getLang();
     const embed = typeof card?.embed === "string" ? card.embed.trim() : "";
-    const title = typeof card?.cardTitle === "object" ?pickLang(card.carTitle, lang) : card?.cardTitle || "";
-    const desc = typeof card?.cardDescription === "object" ?pickLang(card.carTitle, lang) : card?.cardTitle || "";
+    const title =
+      typeof card?.cardTitle === "object"
+        ? pickLang(card.cardTitle, lang)
+        : card?.cardTitle || "";
+
+    const desc =
+      typeof card?.cardDescription === "object"
+        ? pickLang(card.cardDescription, lang)
+        : card?.cardDescription || "";
   
     // show nothing if no embed and no text
     if (!embed && !title && !desc) return "";

@@ -20,6 +20,11 @@ body {
   line-height: 1.6;
 }
 
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
 /* ===================================
     BRAND SYSTEM
 =================================== */
@@ -225,7 +230,7 @@ body {
 #aboutText p {
   margin-bottom: 25px;
   font-size: 20px;
-  color: var(--color-muted);
+  color: var(--color-text);
 }
 
 /* Desktop */
@@ -483,7 +488,6 @@ body {
 
 }
 
-
 /* ===================================
     FOOTER
 =================================== */
@@ -495,24 +499,152 @@ footer {
   text-align: center;
 }
 
+
 .footer-icons {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   margin-bottom: 30px;
 }
 
 .footer-icon img {
-  width: 30px;
+  width: 40px;
   filter: invert(1);
   transition: transform 0.3s ease;
 }
 
 .footer-icon img:hover {
+  color: var(--color-accent);
   transform: scale(1.1);
 }
 
 footer p {
   color: var(--color-muted);
   font-size: 14px;
+}
+
+.footer-legal{
+  margin-top: 12px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  font-size: 14px;
+  opacity: .85;
+}
+.footer-legal a{
+  color: var(--color-text);
+  text-decoration: underline;
+}
+.footer-legal a:hover{ 
+  color: var(--color-accent); 
+}
+
+/* ==========================
+    LEGALS; PRIVACY; COOKIES
+============================== */
+.legal-page,
+.privacy-page,
+.cookies-page{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.legal-header,
+.privacy-header,
+.cookies-header{
+  margin-bottom: 40px;
+}
+
+.legal-header h1,
+.privacy-header h1,
+.cookies-header h1{
+  font-size: 42px;
+  margin-bottom: 10px;
+  color: var(--color-accent);
+
+}
+
+.legal-block,
+.privacy-block,
+.cookies-block{
+  margin-bottom: 30px;
+}
+
+.legal-block h2,
+.privacy-block h2,
+.cookies-block h2{
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--color-accent);
+}
+
+.legal-block p,
+.privacy-block p,
+.cookies-block p{
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+
+.cookie-banner{
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+
+  background: rgba(0,0,0,.85);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+
+  padding: 16px;
+  border-radius: 10px;
+
+}
+
+.cookie-inner{
+  max-width: var(--container-width);
+  margin: 0 auto;
+
+  display:flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookie-text p{
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: 14px;
+  max-width: 700px;
+}
+
+.cookie-text strong{
+  font-size: 15px;
+}
+
+.cookie-actions{
+  display:flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-btn{
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  background: var(--color-accent);
+  color: #000;
+  font-size: 14px;
+}
+
+.cookie-btn.ghost{
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.25);
+  color: var(--color-text);
+}
+
+@media (max-width: 768px){
+  .cookie-inner{ flex-direction: column; align-items: stretch; }
+  .cookie-actions{ justify-content: flex-end; }
 }

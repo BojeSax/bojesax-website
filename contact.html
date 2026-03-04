@@ -22,9 +22,9 @@
       
           <div class="contact-info">
       
-            <h1>Book Böje</h1>
+            <h1 data-i18n="contact_title">Book Böje</h1>
       
-            <p>
+            <p data-i18n="contact_intro">
               For bookings, collaborations or live events, feel free to get in touch.
               Böje performs internationally combining live saxophone with electronic music.
             </p>
@@ -32,14 +32,14 @@
             <div class="contact-direct">
       
               <p>
-                Email
+                <span data-i18n="contact_email_label">Email</span>
                 <a href="mailto:realbojesound@gmail.com">
                   realbojesound@gmail.com
                 </a>
               </p>
       
               <p>
-                Instagram
+                <span data-i18n="contact_instagram_label">Instagram</span>
                 <a href="https://www.instagram.com/bojesax" target="_blank">
                   @bojesax
                 </a>
@@ -63,14 +63,32 @@
               <input name="bot-field">
             </p>
       
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-      
-            <textarea name="message" placeholder="Describe your request" rows="6" required></textarea>
-      
-            <button type="submit" class="btn-contact">
-              Send Request
-            </button>
+            <input
+                type="text"
+                name="name"
+                data-i18n-placeholder="contact_name"
+                required
+              >
+
+              <input
+                type="email"
+                name="email"
+                data-i18n-placeholder="contact_email"
+                required
+              >
+
+              <textarea
+                name="message"
+                rows="6"
+                data-i18n-placeholder="contact_message"
+                required
+              ></textarea>
+
+              <button
+                type="submit"
+                class="btn-contact"
+                data-i18n="contact_submit"
+              ></button>
       
           </form>
       
@@ -85,7 +103,6 @@
 <script src="js/components.js"></script>
 <script src="js/navigation.js"></script>
 <script src="js/i18n.js"></script>
-<script src="js/videoRender.js"></script>
 <script async src="https://www.instagram.com/embed.js"></script>
 
 </body>

@@ -4,7 +4,9 @@ async function loadComponent(id, path) {
   
     const res = await fetch(path);
     const html = await res.text();
-    el.innerHTML = html;
+    document.getElementById(id).innerHTML = html;
+
+    window.dispatchEvent(new Event("components:loaded"));
   }
   
   document.addEventListener("DOMContentLoaded", async () => {

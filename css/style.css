@@ -1,5 +1,5 @@
 /* ===================================
-   1. RESET
+    RESET
 =================================== */
 
 * {
@@ -21,7 +21,7 @@ body {
 }
 
 /* ===================================
-   2. BRAND SYSTEM
+    BRAND SYSTEM
 =================================== */
 
 :root {
@@ -38,7 +38,7 @@ body {
 }
 
 /* ===================================
-   3. LAYOUT
+    LAYOUT
 =================================== */
 
 .wrapper {
@@ -52,7 +52,7 @@ body {
 }
 
 /* ===================================
-   4. NAVBAR
+    NAVBAR
 =================================== */
 
 .navbar {
@@ -172,7 +172,7 @@ body {
   }
 }
 /* ===================================
-   5. HERO
+    HERO
 =================================== */
 
 #hero {
@@ -209,7 +209,7 @@ body {
 }
 
 /* ===================================
-   6. ABOUT
+    ABOUT
 =================================== */
 
 #about {
@@ -356,7 +356,136 @@ body {
 }
 
 /* ===================================
-   8. FOOTER
+   CONTACT
+=================================== */
+
+.contact-hero {
+  position: relative;
+  padding: 550px 50px;
+  transform: scaleX(-1);
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: url("/assets/img/desert.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.contact-layout {
+  position: relative;
+  z-index: 2;
+  transform: scaleX(-1);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.contact-info h1 {
+  font-size: 42px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.contact-direct a {
+  margin-left: 8px;
+  text-decoration: underline;
+  color: var(--color-accent);
+}
+
+/* FORM */
+
+.contact-form {
+  background: rgba(0,0,0,0.75);
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+
+  width: 100%;
+  padding: 14px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  background: transparent;
+
+  color: white;
+  font-family: inherit;
+  font-size: 16px;
+
+  transition: border-color .2s ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* FOCUS */
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+  border-color: var(--color-accent);
+
+  outline: none;
+  box-shadow: none;
+}
+
+/* BUTTON */
+
+.btn-contact {
+
+  padding: 16px;
+  border: none;
+
+  background: var(--color-accent);
+  color: var(--color-bg);
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  opacity: .9;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-hero {
+    background-position: center top;
+    
+  }
+
+}
+
+
+/* ===================================
+    FOOTER
 =================================== */
 
 footer {

@@ -10,39 +10,7 @@
 
 <body>
 
-  <nav class="navbar">
-    <div class="wrapper navbar-inner">
-  
-      <!-- Left -->
-      <div class="nav-left">
-        <img src="assets/img/Boje-Logo.png" class="boje-logo" />
-      </div>
-  
-      <!-- Center Language Toggle -->
-      <div class="lang-toggle">
-        <button data-lang="en" class="lang-btn active">EN</button>
-        <span>|</span>
-        <button data-lang="es" class="lang-btn">ES</button>
-      </div>
-  
-      <!-- Right -->
-      <div class="nav-right">
-        <button class="burger" id="burgerBtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-  
-        <div class="nav-links" id="navMenu">
-          <a href="#about" data-i18n="nav_about">About</a>
-          <a href="music.html" data-i18n="nav_music">Music</a>
-          <a href="video.html" data-i18n="nav_video">Video</a>
-          <a href="contact.html" data-i18n="nav_contact">Contact</a>
-        </div>
-      </div>
-  
-    </div>
-  </nav>
+  <div id="navbar"> </div>
 
   <section id="hero">
     <div id="heroCarousel">
@@ -61,42 +29,9 @@
     </div>
   </section>
 
-  <footer>
-    <div class="wrapper">
-      <div class="footer-icons">
-            <!-- Icons -->
-    
-      <a href="https://www.instagram.com/bojesax" target="_blank" class="footer-icon">
-        <img src="assets/icons/instagram.svg" alt="Instagram" class="footer-icon-img"/>
-      </a>
+  <div id="footer"></div>
 
-      <a href="https://open.spotify.com/intl-es/artist/6H5GRoWj00kN40WG1dV2vW" target="_blank" class="footer-icon">
-        <img src="assets/icons/spotify.svg" alt="Spotify" class="footer-icon-img"/>
-      </a>
-
-      <a href="https://www.youtube.com/@bojesaxofficial" target="_blank" class="footer-icon">
-        <img src="assets/icons/youtube.svg" alt="YouTube" class="footer-icon-img"/>
-      </a>
-
-      <a href="mailto:realbojesound@gmail.com" class="footer-icon" title="Email">
-        <img src="assets/icons/mail.svg" alt="Email" class="footer-icon-img"/>
-      </a>
-
-      <a href="https://www.facebook.com/bojesax" target="_blank" class="footer-icon">
-        <img src="assets/icons/facebook.svg" alt="Facebook" class="footer-icon-img"/>
-      </a>
-
-      <a href="https://linktr.ee/bojesax" target="_blank" class="footer-icon">
-        <img src="assets/icons/linktree.svg" alt="Linktree" class="footer-icon-img"/>
-      </a>
-      </div>
-      <p class="mb-1">© 2025 BOJE. All rights reserved.</p>
-      <p class="small text-white mb-0">
-        A <a href="https://craftlab-studio.com" target="_blank" class="text-white text-decoration-underline">CraftLab Studio</a> project — Built by hand. Designed with soul.
-      </p>
-    </div>
-  </footer>
-
+  <script src="js/components.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/homeRender.js"></script>
   <script src="js/i18n.js"></script>

@@ -10,102 +10,29 @@
 
 <body>
 
-  <!-- NAVBAR (same structure as index) -->
-  <nav class="navbar">
-    <div class="wrapper navbar-inner">
-  
-      <!-- Left -->
-      <div class="nav-left">
-        <a href="index.html">
-          <img src="assets/img/Boje-Logo.png" class="boje-logo" />
-        </a>
-      </div>
-  
-      <!-- Center Language Toggle -->
-      <div class="lang-toggle">
-        <button data-lang="en" class="lang-btn active">EN</button>
-        <span>|</span>
-        <button data-lang="es" class="lang-btn">ES</button>
-      </div>
-  
-      <!-- Right -->
-      <div class="nav-right">
-        <button class="burger" id="burgerBtn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-  
-        <div class="nav-links" id="navMenu">
-          <a href="index.html#about" data-i18n="nav_about"></a>
-          <a href="music.html" data-i18n="nav_music"></a>
-          <a href="video.html" data-i18n="nav_video"></a>
-          <a href="contact.html" data-i18n="nav_contact"></a>
-        </div>
-      </div>
-  
-    </div>
-  </nav>
+  <div id="navbar"></div>
 
-  <!-- PAGE CONTENT -->
-  <main class="section" style="margin-top: 120px;">
+  <main class="section">
+
     <div class="wrapper">
 
-      <header style="text-align: center; margin-bottom: 80px;">
+      <header class="music-header">
         <h1 id="musicTitle"></h1>
-        <p id="musicDescription" style="max-width: 700px; margin: 20px auto 0; color: var(--color-muted);"></p>
+        <p id="musicDescription"></p>
       </header>
 
-      <section>
-        <div id="musicCards"></div>
-      </section>
-
+      <div id="musicCards"></div>
+      
     </div>
+
   </main>
+ 
+  <div id="footer"></div>
 
-  <!-- FOOTER (same as index) -->
-  <footer>
-    <div class="wrapper">
-      <div class="footer-icons">
-
-        <a href="https://www.instagram.com/bojesax" target="_blank" class="footer-icon">
-          <img src="assets/icons/instagram.svg" alt="Instagram" />
-        </a>
-
-        <a href="https://open.spotify.com/intl-es/artist/6H5GRoWj00kN40WG1dV2vW" target="_blank" class="footer-icon">
-          <img src="assets/icons/spotify.svg" alt="Spotify" />
-        </a>
-
-        <a href="https://www.youtube.com/@bojesaxofficial" target="_blank" class="footer-icon">
-          <img src="assets/icons/youtube.svg" alt="YouTube" />
-        </a>
-
-        <a href="mailto:realbojesound@gmail.com" class="footer-icon">
-          <img src="assets/icons/mail.svg" alt="Email" />
-        </a>
-
-        <a href="https://www.facebook.com/bojesax" target="_blank" class="footer-icon">
-          <img src="assets/icons/facebook.svg" alt="Facebook" />
-        </a>
-
-        <a href="https://linktr.ee/bojesax" target="_blank" class="footer-icon">
-          <img src="assets/icons/linktree.svg" alt="Linktree" />
-        </a>
-
-      </div>
-
-      <p>© 2025 BOJE. All rights reserved.</p>
-      <p>
-        A <a href="https://craftlab-studio.com" target="_blank">CraftLab Studio</a> project — Built by hand. Designed with soul.
-      </p>
-    </div>
-  </footer>
-
-  <!-- Scripts (same order philosophy as index) -->
+  <script src="js/components.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/musicRender.js"></script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </body>
 </html>

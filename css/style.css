@@ -48,7 +48,7 @@ body {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 150px 0;
 }
 
 /* ===================================
@@ -93,6 +93,11 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.nav-links a.active {
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+}
+
 .nav-links a:hover {
   color: var(--color-accent);
 }
@@ -105,6 +110,8 @@ body {
   display: flex;
   gap: 8px;
   font-size: 16px;
+  width: 80px;
+  text-align: center;
 }
 
 .lang-btn {
@@ -153,6 +160,7 @@ body {
 
   .nav-links.open {
     display: flex;
+    flex-direction: column;
   }
 
   .burger {
@@ -216,7 +224,7 @@ body {
 
 #aboutText p {
   margin-bottom: 25px;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-muted);
 }
 
@@ -227,7 +235,6 @@ body {
   }
 }
 
-/* ===================================
 /* =========================
    MUSIC SECTION
 ========================= */
@@ -288,14 +295,14 @@ body {
 }
 
 .music-card-title {
-  font-size: 26px;
+  font-size: 20px;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
 
 .music-card-desc {
   color: var(--color-muted);
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
 }
 

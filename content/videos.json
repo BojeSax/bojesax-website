@@ -1,0 +1,28 @@
+{
+  "title": {
+    "en": "Videos",
+    "es": "Vídeos"
+  },
+  "description": {
+    "en": "Live performances and studio sessions.",
+    "es": "Actuaciones en directo y sesiones de estudio."
+  },
+  "cards": [
+    {
+      "order": 1,
+      "video": "https://www.youtube.com/watch?v=Wb7smQieWIA",
+      "text": {
+        "en": "Live sax performance with electronic groove.",
+        "es": "Actuación en directo con saxofón y groove electrónico."
+      }
+    },
+    {
+      "order": 2,
+      "video": "https://www.instagram.com/reel/DUHNEW8EsTN/",
+      "text": {
+        "en": "Backstage sax improvisation.",
+        "es": "Improvisación backstage."
+      }
+    }
+  ]
+}

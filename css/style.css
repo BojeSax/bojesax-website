@@ -319,6 +319,43 @@ body {
 }
 
 /* ===================================
+    VIDEO PAGE
+=================================== */
+
+#videoCards {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.video-embed iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.video-embed iframe[src*="youtube"] {
+  aspect-ratio: 16/9;
+}
+
+.video-embed iframe[src*="instagram"] {
+  aspect-ratio: 9/16;
+}
+
+.video-text {
+  font-size: 18px;
+  opacity: .85;
+}
+
+/* ===================================
    8. FOOTER
 =================================== */
 

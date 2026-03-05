@@ -73,13 +73,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 25px 0 25px 0;
-  position: relative; /* Needed for centered toggle */
+  height: 120px;
+  position: relative;
 }
 
 /* Left logo */
 .boje-logo {
   height: 70px;
+  max-width: 100%;
   filter: brightness(0) invert(1);
   flex-shrink: 0;
 }
@@ -93,13 +94,13 @@ a {
 .nav-links a {
   text-decoration: none;
   color: var(--color-text);
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: 1px;
   transition: opacity 0.3s ease;
 }
 
 .nav-links a.active {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid var(--color-accent);
   padding-bottom: 4px;
 }
 
@@ -125,7 +126,7 @@ a {
   color: var(--color-text);
   cursor: pointer;
   font-size: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 5px;
 }
 
 .lang-btn.active {
@@ -146,6 +147,8 @@ a {
   width: 24px;
   height: 2px;
   background: var(--color-text);
+  transition: all .3s ease;
+
 }
 
 /* MOBILE */
@@ -153,11 +156,11 @@ a {
 
   .nav-links {
     position: absolute;
-    top: 100%;
+    top: 120px;
     right: 0;
     background: var(--color-surface);
     flex-direction: column;
-    width: 220px;
+    width: 240px;
     padding: 25px;
     display: none;
     border: 1px solid var(--color-border);
@@ -166,6 +169,12 @@ a {
   .nav-links.open {
     display: flex;
     flex-direction: column;
+  }
+
+  .lang-toggle{
+    left: auto;
+    right: 70px;
+    transform: none;
   }
 
   .burger {

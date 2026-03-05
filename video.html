@@ -3,37 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BOJE Live</title>
- 
+  <title>Böje — Video</title>
+  <meta name="description" content="Live performances and studio sessions by Böje." />
+
   <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-
   <div id="navbar"></div>
 
-<main class="section">
+  <main class="section">
+    <div class="wrapper">
 
-  <div class="wrapper">
+      <header class="page-header video-header reveal">
+        <h1 id="videoTitle">Videos</h1>
+        <p id="videoDescription" class="muted"></p>
+      </header>
 
-    <header class="video-header">
-      <h1 id="videoTitle"></h1>
-      <p id="videoDescription"></p>
-    </header>
+      <section aria-label="Video cards">
+        <div id="videoCards" class="reveal"></div>
+      </section>
 
-    <div id="videoCards"></div>
+    </div>
+  </main>
 
-  </div>
+  <div id="footer"></div>
 
-</main>
-
-<div id="footer"></div>
-
-<script src="js/components.js"></script>
-<script src="js/navigation.js"></script>
-<script src="js/i18n.js"></script>
-<script src="js/videoRender.js"></script>
-<script async src="https://www.instagram.com/embed.js"></script>
-
+  <script src="/js/components.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/videoRender.js"></script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <script src="/js/reveal.js"></script>
 </body>
 </html>

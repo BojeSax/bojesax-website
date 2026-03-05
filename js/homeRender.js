@@ -39,7 +39,7 @@ async function loadHomeContent() {
       current = (current + 1) % slides.length;
   
       slides[current].classList.add("active");
-    }, 5000);
+    }, 7000);
   }
   
   function renderSlider(slider) {
@@ -120,6 +120,18 @@ async function loadHomeContent() {
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
   }
+
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+  
+  document.querySelectorAll(".reveal").forEach(el => {
+    revealObserver.observe(el);
+  });
   
   document.addEventListener("DOMContentLoaded", loadHomeContent);
 

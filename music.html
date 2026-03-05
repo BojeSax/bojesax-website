@@ -4,35 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Böje — Music</title>
+  <meta name="description" content="Latest releases and live recordings by Böje." />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
 
 <body>
-
   <div id="navbar"></div>
 
   <main class="section">
-
     <div class="wrapper">
 
-      <header class="music-header">
-        <h1 id="musicTitle"></h1>
-        <p id="musicDescription"></p>
+      <header class="page-header music-header reveal">
+        <h1 id="musicTitle">Music</h1>
+        <p id="musicDescription" class="muted"></p>
       </header>
 
-      <div id="musicCards"></div>
-      
-    </div>
+      <section aria-label="Music cards">
+        <div id="musicCards" class="reveal"></div>
+      </section>
 
+    </div>
   </main>
- 
+
   <div id="footer"></div>
 
-  <script src="js/components.js"></script>
-  <script src="js/navigation.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/musicRender.js"></script>
-
+  <script src="/js/components.js"></script>
+  <script src="/js/navigation.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/musicRender.js"></script>
+  <script src="/js/reveal.js"></script>
 </body>
 </html>

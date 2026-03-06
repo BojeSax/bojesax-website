@@ -145,5 +145,4 @@ collections:
               - label: "Photo"
                 name: "image"
                 widget: "image"
-                media_folder: "assets/photos"
-                public_folder: "/assets/photos"
+                

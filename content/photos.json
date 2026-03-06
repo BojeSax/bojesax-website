@@ -1,18 +1,24 @@
 {
-    "title": {
-      "en": "Photos",
-      "es": "Fotos"
+  "title": {
+    "en": "Photos",
+    "es": "Fotos"
+  },
+  "description": {
+    "en": "A selection of live moments, performances and visual highlights.",
+    "es": "Una selección de momentos en directo y actuaciones."
+  },
+  "photos": [
+    {
+      "image": "/assets/photos/photo1.jpg",
+      "order": 1
     },
-    "description": {
-      "en": "A selection of live moments, performances and visual highlights.",
-      "es": "Una selección de momentos en directo y actuaciones."
+    {
+      "image": "/assets/photos/photo2.jpg",
+      "order": 2
     },
-    "photos": [
-      {
-        "image": "/assets/photos/photo1.jpg"
-      },
-      {
-        "image": "/assets/photos/photo2.jpg"
-      }
-    ]
-  }
+    {
+      "order": 3,
+      "image": "/assets/photos/bojesax-2nn.jpg"
+    }
+  ]
+}

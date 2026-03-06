@@ -42,7 +42,7 @@
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          class="contact-form reveal"
+          action="/?success=true"          class="contact-form reveal"
         >
           <input type="hidden" name="form-name" value="contact" />
 
@@ -94,6 +94,15 @@
   <script src="/js/components.js"></script>
   <script src="/js/navigation.js"></script>
   <script src="/js/i18n.js"></script>
+
+  <script src="js/cookies.js"></script>
+
   <script src="/js/reveal.js"></script>
+
+  <form name="contact" data-netlify="true" hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <textarea name="message"></textarea>
+  </form>
 </body>
 </html>

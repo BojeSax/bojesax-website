@@ -18,10 +18,11 @@ img {
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background: var(--color-bg);
+  font-family: 'Inter', sans-serif;  background: var(--color-bg);
   color: var(--color-text);
   line-height: 1.6;
+  font-weight:400;
+  letter-spacing:.2px;
 }
 
 a {
@@ -33,6 +34,7 @@ a {
   font-size:36px;
   margin-bottom:50px;
   color:var(--color-accent);
+  font-family:'Marcellus', serif;
 }
 
 .sr-only{
@@ -90,6 +92,8 @@ a {
   font-size: 42px;
   margin-bottom: 12px;
   color: var(--color-accent);
+  font-family:'Marcellus', serif;
+
 }
 
 .page-header p{
@@ -287,6 +291,7 @@ a {
 }
 
 .hero-content h1{
+  font-family:'Marcellus', serif;
   font-size:64px;
   letter-spacing:3px;
   margin-bottom:10px;
@@ -613,6 +618,8 @@ border-top: 2px solid var(--color-accent);}
   font-size: 42px;
   margin-top: 0;
   margin-bottom: 20px;
+  font-family:'Marcellus', serif;
+
 }
 
 .contact-info p {

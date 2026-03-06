@@ -1,12 +1,12 @@
 {
   "slider": [
-    "/assets/uploads/slider1.jpg",
-    "/assets/uploads/slider2.jpg",
-    "/assets/uploads/slider3.jpg",
-    "/assets/uploads/slider4.jpg",
-    "/assets/uploads/slider5.png"
+    "/assets/hero/slider1.jpg",
+    "/assets/hero/slider2.jpg",
+    "/assets/hero/slider3.jpg",
+    "/assets/hero/slider4.jpg",
+    "/assets/hero/slider5.png"
   ],
-  "aboutImage": "/assets/uploads/boje.jpg",
+  "aboutImage": "/assets/artist/boje.jpg",
   "aboutText": [
     {
       "en": "Böje is an Andalusian saxophonist and producer who bridges tradition and modernity through sound. A musician since the age of eight, he blends the pulse of electronic music with the expressive depth of jazz, rock, blues, and flamenco, creating a style that feels both contemporary and deeply rooted.",

@@ -113,30 +113,26 @@ collections:
                   - { label: "English", name: "en", widget: "string" }
                   - { label: "Spanish", name: "es", widget: "string" }
 
-      - name: "photos"
-        label: "Photos"
-        files:
-          - file: "content/photos.json"
-            label: "Photos Page"
-            name: "photos"
-            fields:
+            - name: "photos"
+              label: "Photos"
+              file: "content/photos.json"
+              format: "json"
+              fields:
+                - label: "Title"
+                  name: "title"
+                  widget: "string"
 
-              - label: "Title"
-                name: "title"
-                widget: "string"
+                - label: "Photos"
+                  name: "photos"
+                  widget: "list"
+                  fields:
+                    - label: "Photo"
+                      name: "image"
+                      widget: "image"
+                      media_folder: "assets/photos"
+                      public_folder: "/assets/photos"
 
-              - label: "Photos"
-                name: "photos"
-                widget: "list"
-                fields:
-
-                  - label: "Photo"
-                    name: "image"
-                    widget: "image"
-                    media_folder: "assets/photos"
-                    public_folder: "/assets/photos"
-
-                  - label: "Instagram Link"
-                    name: "instagram"
-                    widget: "string"
-                    required: false
+                    - label: "Instagram Link"
+                      name: "instagram"
+                      widget: "string"
+                      required: false

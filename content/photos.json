@@ -1,0 +1,13 @@
+{
+    "title": "Photos",
+    "photos": [
+      {
+        "image": "/assets/photos/photo1.jpg",
+        "instagram": "https://www.instagram.com/roof.tv/reel/C5GzuF1vmyL/"
+      },
+      {
+        "image": "/assets/photos/photo2.jpg",
+        "instagram": "https://www.instagram.com/bojesax/p/DUaOJLTjMUs/"
+      }
+    ]
+  }

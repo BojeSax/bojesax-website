@@ -688,6 +688,35 @@ border-top: 2px solid var(--color-accent);}
 }
 
 /* ===================================
+    PHOTOS
+=================================== */
+
+.photos-grid,
+#photosGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+
+.photo-card{
+  display:block;
+  overflow:hidden;
+  border-radius:6px;
+}
+
+.photo-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  transition:transform .4s ease;
+}
+
+.photo-card:hover img{
+  transform:scale(1.05);
+}
+
+/* ===================================
     FOOTER
 =================================== */
 

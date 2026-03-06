@@ -1,16 +1,18 @@
 {
-  "title": "Photos",
-  "photos": [
-    {
-      "image": "/assets/photos/photo1.jpg",
-      "instagram": "https://www.instagram.com/roof.tv/reel/C5GzuF1vmyL/"
+    "title": {
+      "en": "Photos",
+      "es": "Fotos"
     },
-    {
-      "image": "/assets/photos/photo2.jpg",
-      "instagram": "https://www.instagram.com/bojesax/p/DUaOJLTjMUs/"
+    "description": {
+      "en": "A selection of live moments, performances and visual highlights.",
+      "es": "Una selección de momentos en directo y actuaciones."
     },
-    {
-      "image": "/assets/photos/boje-2.jpg"
-    }
-  ]
-}
+    "photos": [
+      {
+        "image": "/assets/photos/photo1.jpg"
+      },
+      {
+        "image": "/assets/photos/photo2.jpg"
+      }
+    ]
+  }

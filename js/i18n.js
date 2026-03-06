@@ -15,8 +15,12 @@ const translations = {
     nav_about: "About",
     nav_music: "Music",
     nav_video: "Video",
+    nav_photos: "Photos",
     nav_contact: "Contact",
 
+    //PHOTOS
+    photos_follow: "Follow Böje on Instagram →",
+  
     // CONTACT
     contact_title: "Book Böje",
     contact_intro:
@@ -81,7 +85,11 @@ const translations = {
     nav_about: "Sobre mí",
     nav_music: "Música",
     nav_video: "Vídeo",
+    nav_photos: "Fotos",
     nav_contact: "Contacto",
+
+    // FOTOS
+    photos_follow: "Seguir a Böje en Instagram →",
 
     // CONTACT
     contact_title: "Reservar Böje",

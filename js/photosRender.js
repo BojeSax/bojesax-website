@@ -29,6 +29,10 @@ function getLang() {
           <img src="${photo.image}" alt="Böje live photo">
         </div>
       `).join("");
+
+      if (window.initReveal) {
+        window.initReveal();
+      }
   }
   
   document.addEventListener("DOMContentLoaded", loadPhotos);

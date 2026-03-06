@@ -585,13 +585,12 @@ border-top: 2px solid var(--color-accent);}
 
 .contact-hero {
   position: relative;
-  padding: 550px 50px;
-  transform: scaleX(-1);
-  margin-top: 0;
-  margin-bottom: 0;
-  background-image: url("/assets/img/desert.png");
-  background-size: cover;
-  background-position: center;
+  min-height: calc(100vh - 120px);
+  padding: 140px 50px 80px 50px;
+  margin-top: 40px;
+  background-image: url("/assets/artist/desert.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .contact-overlay {
@@ -603,11 +602,10 @@ border-top: 2px solid var(--color-accent);}
 .contact-layout {
   position: relative;
   z-index: 2;
-  transform: scaleX(-1);
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  display:grid;
+  grid-template-columns:420px;
+  gap:40px;
   align-items: start;
 }
 
@@ -695,24 +693,30 @@ border-top: 2px solid var(--color-accent);}
 
 @media (max-width: 768px) {
 
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
+    .contact-hero{
+      min-height: auto;
+      padding:120px 25px 80px 0px;
+      background-position: 65% center;
+      background-size: 200%;
+      background-position: 70% center;
+      margin-bottom: 0;
+    }
 
-  .contact-hero {
-    background-position: center top;
-    
-  }
+    .contact-layout{
+      grid-template-columns:1fr;
+      max-width:500px;
+    }
+  
+    .contact-form{
+      padding:30px;
+    }
+  
+  
 
 }
 
 /* ===================================
     PHOTOS
-=================================== */
-
-/* ===================================
-   PHOTOS GALLERY
 =================================== */
 
 #photosGrid{

@@ -1,25 +1,36 @@
-async function loadPhotos(){
-
-    const res = await fetch("/content/photos.json",{cache:"no-store"})
-    const data = await res.json()
-  
-    renderPhotos(data.photos)
-  
+function getLang() {
+    return localStorage.getItem("lang") || "en";
   }
   
-  function renderPhotos(photos){
-  
-    const grid = document.getElementById("photosGrid")
-    if(!grid) return
-  
-    grid.innerHTML = photos.map(p => `
-  
-      <a href="${p.instagram || '#'}" target="_blank" class="photo-card">
-        <img src="${p.image}" alt="Boje photo">
-      </a>
-  
-    `).join("")
-  
+  function pickLang(obj, lang) {
+    if (!obj || typeof obj !== "object") return "";
+    return obj[lang] || obj.en || "";
   }
   
-  document.addEventListener("DOMContentLoaded",loadPhotos)
+  async function loadPhotos() {
+  
+    const res = await fetch("/content/photos.json", { cache: "no-store" });
+    const data = await res.json();
+  
+    const lang = getLang();
+  
+    const title = document.getElementById("photosTitle");
+    const desc = document.getElementById("photosDescription");
+  
+    if (title) title.textContent = pickLang(data.title, lang);
+    if (desc) desc.textContent = pickLang(data.description, lang);
+  
+    const container = document.getElementById("photosGrid");
+  
+    container.innerHTML = data.photos
+      .sort((a,b)=>a.order-b.order)
+      .map(photo => `
+        <div class="photo-card reveal">
+          <img src="${photo.image}" alt="Böje live photo">
+        </div>
+      `).join("");
+  }
+  
+  document.addEventListener("DOMContentLoaded", loadPhotos);
+  
+  window.addEventListener("lang:change", loadPhotos);

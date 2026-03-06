@@ -1,17 +1,21 @@
 {
-  "title": "Photos",
-  "photos": [
-    {
-      "image": "/assets/photos/photo1.jpg",
-      "instagram": "https://www.instagram.com/roof.tv/reel/C5GzuF1vmyL/"
+    "title": {
+      "en": "Photos",
+      "es": "Fotos"
     },
-    {
-      "image": "/assets/photos/photo2.jpg",
-      "instagram": "https://www.instagram.com/bojesax/p/DUaOJLTjMUs/"
+    "description": {
+      "en": "Moments from live performances and studio sessions.",
+      "es": "Momentos de actuaciones en directo y sesiones de estudio."
     },
-    {
-      "instagram": "https://www.instagram.com/p/DUaOJLTjMUs/",
-      "image": "/assets/photos/boje-2.jpg"
-    }
-  ]
-}
+    "photos": [
+      {
+        "order": 1,
+        "image": "/assets/photos/photo1.jpg"
+      },
+      {
+        "order": 2,
+        "image": "/assets/photos/photo2.jpg"
+      }
+    ]
+  }
+

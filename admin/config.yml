@@ -119,19 +119,30 @@ collections:
         fields:
           - label: "Title"
             name: "title"
-            widget: "string"
+            widget: "object"
+              - { label: "English", name: "en", widget: "string" }
+              - { label: "Spanish", name: "es", widget: "string" }
+          
+          - label: "Description"
+            name: "description"
+            widget: "object"
+            fields:
+              - { label: "English", name: "en", widget: "text" }
+              - { label: "Spanish", name: "es", widget: "text" }
 
           - label: "Photos"
             name: "photos"
             widget: "list"
             fields:
+
+              - label: "Order"
+                name: "order"
+                widget: "number"
+                value_type: "int"
+                min: 1
+
               - label: "Photo"
                 name: "image"
                 widget: "image"
                 media_folder: "assets/photos"
                 public_folder: "/assets/photos"
-
-              - label: "Instagram Link"
-                name: "instagram"
-                widget: "string"
-                required: false

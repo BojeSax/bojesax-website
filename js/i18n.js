@@ -18,6 +18,9 @@ const translations = {
     nav_photos: "Photos",
     nav_contact: "Contact",
 
+    //HERO
+    hero_tagline: "Live Saxophone & Electronic Music",
+
     //PHOTOS
     photos_follow: "Follow Böje on Instagram →",
   
@@ -87,6 +90,9 @@ const translations = {
     nav_video: "Vídeo",
     nav_photos: "Fotos",
     nav_contact: "Contacto",
+
+    //HERO
+    hero_tagline: "Saxofón en vivo y música electrónica",
 
     // FOTOS
     photos_follow: "Seguir a Böje en Instagram →",

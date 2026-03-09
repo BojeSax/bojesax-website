@@ -54,10 +54,23 @@ async function loadMusicContent() {
   
     wrap.innerHTML = sorted.map(renderOneCard).join("");
   }
+
+  function extractIframe(embedHtml) {
+    if (!embedHtml) return "";
+  
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(embedHtml, "text/html");
+    const iframe = doc.querySelector("iframe");
+  
+    return iframe ? iframe.outerHTML : "";
+  }
   
   function renderOneCard(card) {
     const lang = getLang();
-    const embed = typeof card?.embed === "string" ? card.embed.trim() : "";
+    const embed =
+      typeof card?.embed === "string"
+        ? extractIframe(card.embed.trim())
+        : "";
     const title =
       typeof card?.cardTitle === "object"
         ? pickLang(card.cardTitle, lang)

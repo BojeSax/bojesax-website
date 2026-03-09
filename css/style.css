@@ -619,11 +619,13 @@ border-top: 2px solid var(--color-accent);}
   margin-top: 0;
   margin-bottom: 20px;
   font-family:'Marcellus', serif;
+  color: var(--color-accent);
 
 }
 
 .contact-info p {
   line-height: 1.7;
+  font-size: 18px;
   margin-bottom: 25px;
 }
 

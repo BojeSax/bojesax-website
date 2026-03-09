@@ -52,7 +52,7 @@ async function loadMusicContent() {
       return ao - bo;
     });
   
-    wrap.innerHTML = sorted.map(renderOneCard).join("");
+    wrap.innerHTML = sorted.map(renderOneCard).join(`<div class="music-divider"></div>`);
   }
 
   function extractIframe(embedHtml) {

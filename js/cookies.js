@@ -62,6 +62,10 @@ document.addEventListener("click", e => {
   }
 });
 
+window.addEventListener("cookie:change", () => {
+  location.reload();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   renderCookieBanner();
 

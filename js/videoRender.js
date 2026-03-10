@@ -57,9 +57,9 @@ async function loadVideoContent() {
     wrap.innerHTML = sorted.map(renderOneVideo).join("");
 
     // process instagram embeds after DOM injection
-    if (window.instgrm && window.instgrm.Embeds) {
+    if (cookiesAccepted() && window.instgrm && window.instgrm.Embeds) {
       window.instgrm.Embeds.process();
-    }  
+    } 
   }
 
   function buildVideoEmbed(url) {

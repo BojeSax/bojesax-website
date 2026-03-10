@@ -287,19 +287,32 @@ a {
   text-align:left;
   color: var(--color-text);
   z-index: 2;
-  max-width: 500px;
+  max-width: 540px;
+  background:rgba(0,0,0,0.25);
+  padding:20px 30px;
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
 }
 
 .hero-content h1{
   font-family:'Marcellus', serif;
-  font-size:64px;
-  letter-spacing:3px;
-  margin-bottom:10px;
+  font-size: 5rem;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .hero-content p{
-  font-size:20px;
+  font-size: 1.5rem;
   color:var(--color-muted);
+  line-height: 3rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.hero-content h1,
+.hero-content p{
+  text-shadow:0 6px 20px rgba(0,0,0,0.8);
 }
 
 .hero-scroll{
@@ -381,17 +394,21 @@ a {
   }
 
   .hero-content{
-    left:26%;
+    left:50%;
+    transform:translateX(-50%);
     top:20px;
-    max-width:40%;
+    width:90%;
+    max-width:90%;
   }
 
   .hero-content h1{
-    font-size:44px;
+    font-size: 40px;
+    font-weight: 700;
   }
 
   .hero-content p{
-    font-size:16px;
+    font-size: 16px;
+    font-weight: 600;
   }
 
   .nav-links{
@@ -587,6 +604,25 @@ border-top: 2px solid var(--color-accent);}
   opacity: .85;
 }
 
+@media (max-width:768px){
+
+  .video-embed iframe[src*="instagram"]{
+    max-width:320px;
+    width:100%;
+    aspect-ratio:9/16;
+    height:auto;
+  }
+  
+  .video-embed{
+    overflow:hidden;
+  }
+
+  .video-text{
+    font-size:16px;
+  }
+  
+  }
+
 /* ===================================
    CONTACT
 =================================== */
@@ -706,12 +742,11 @@ border-top: 2px solid var(--color-accent);}
 @media (max-width: 768px) {
 
     .contact-hero{
-      min-height: auto;
-      padding:120px 25px 80px 0px;
-      background-position: 65% center;
-      background-size: 200%;
-      background-position: 70% center;
-      margin-bottom: 0;
+      min-height: 100vh;
+      padding:150px 25px 80px 25px;
+      background-size: cover;
+      background-position: 65% ;
+      margin-top: 0;
     }
 
     .contact-layout{

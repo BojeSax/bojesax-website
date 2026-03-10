@@ -19,7 +19,8 @@ const translations = {
     nav_contact: "Contact",
 
     //HERO
-    hero_tagline: "Live Saxophone & Electronic Music",
+    hero_tagline:
+      "Live Saxophone & Electronic Music\nClubs • Festivals • Private Events",
 
     //PHOTOS
     photos_follow: "Follow Böje on Instagram →",
@@ -92,7 +93,8 @@ const translations = {
     nav_contact: "Contacto",
 
     //HERO
-    hero_tagline: "Saxofón en vivo y música electrónica",
+    hero_tagline:
+       "Saxofón en vivo y música electrónica \n Clubs • Festivales • Eventos privados",    
 
     // FOTOS
     photos_follow: "Seguir a Böje en Instagram →",

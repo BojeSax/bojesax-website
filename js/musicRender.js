@@ -89,7 +89,7 @@ async function loadMusicContent() {
       <div class="music-card-inner">
         
         <div class="music-embed">
-          ${embed || ""}
+          ${cookiesAccepted() ? embed : renderBlockedEmbed()}
         </div>
   
         <div class="music-content">
@@ -100,6 +100,15 @@ async function loadMusicContent() {
       </div>
     </article>
   `;
+  }
+
+  function renderBlockedEmbed() {
+    return `
+      <div class="embed-blocked">
+        <p>This content requires cookies to be accepted.</p>
+        <button class="cookie-open-settings">Enable cookies</button>
+      </div>
+    `;
   }
   
   function escapeHtml(str) {

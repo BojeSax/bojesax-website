@@ -111,12 +111,21 @@ async function loadVideoContent() {
       <article class="video-card">
   
         <div class="video-embed">
-          ${embed}
+          ${cookiesAccepted() ? embed : renderBlockedVideo()}
         </div>
   
         ${text ? `<p class="video-text">${escapeHtml(text)}</p>` : ""}
   
       </article>
+    `;
+  }
+
+  function renderBlockedVideo(){
+    return `
+      <div class="embed-blocked">
+        <p>This video requires cookies to be accepted.</p>
+        <button class="cookie-open-settings">Enable cookies</button>
+      </div>
     `;
   }
   

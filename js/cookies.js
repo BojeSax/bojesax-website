@@ -1,5 +1,9 @@
 const COOKIE_KEY = "boje_cookie_consent"; // "accepted" | "rejected"
 
+function cookiesAccepted() {
+  return localStorage.getItem("boje_cookie_consent") === "accepted";
+}
+
 function getConsent() {
   return localStorage.getItem(COOKIE_KEY);
 }
@@ -51,6 +55,12 @@ function openCookieSettings() {
   localStorage.removeItem(COOKIE_KEY);
   renderCookieBanner();
 }
+
+document.addEventListener("click", e => {
+  if(e.target.classList.contains("cookie-open-settings")){
+    openCookieSettings();
+  }
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCookieBanner();

@@ -89,7 +89,7 @@ async function loadMusicContent() {
       <div class="music-card-inner">
         
         <div class="music-embed">
-          ${cookiesAccepted() ? embed : renderBlockedEmbed()}
+          ${mediaAllowed() ? embed : renderBlockedEmbed()}
         </div>
   
         <div class="music-content">
@@ -127,5 +127,12 @@ async function loadMusicContent() {
     if (!data) return;
   
     renderMusicHeader(data?.title, data?.description);
+    renderMusicCards(data?.cards);
+  });
+
+  window.addEventListener("cookie:change", () => {
+    const data = window.__musicData;
+    if (!data) return;
+  
     renderMusicCards(data?.cards);
   });

@@ -1,74 +1,120 @@
-const COOKIE_KEY = "boje_cookie_consent"; // "accepted" | "rejected"
+const COOKIE_KEY = "boje_cookie_preferences";
 
-function cookiesAccepted() {
-  return localStorage.getItem("boje_cookie_consent") === "accepted";
+function getPreferences(){
+  const stored = localStorage.getItem(COOKIE_KEY);
+  return stored ? JSON.parse(stored) : null;
 }
 
-function getConsent() {
-  return localStorage.getItem(COOKIE_KEY);
-}
-
-function setConsent(value) {
-  localStorage.setItem(COOKIE_KEY, value);
+function savePreferences(prefs){
+  localStorage.setItem(COOKIE_KEY, JSON.stringify(prefs));
   window.dispatchEvent(new Event("cookie:change"));
 }
 
-function renderCookieBanner() {
-  if (document.getElementById("cookieBanner")) return;
-  const consent = getConsent();
-  if (consent) return; // already chosen
+function mediaAllowed(){
+  const prefs = getPreferences();
+  return prefs?.media === true;
+}
+
+/* ---------- BANNER ---------- */
+
+function renderCookieBanner(){
+
+  if(getPreferences()) return;
 
   const banner = document.createElement("div");
-  banner.id = "cookieBanner";
   banner.className = "cookie-banner";
+
   banner.innerHTML = `
-    <div class="cookie-inner">
-      <div class="cookie-text">
-        <strong>Cookies</strong>
-        <p>
-          We use essential cookies and embedded services (YouTube/Instagram/Spotify).
-          You can accept or reject non-essential cookies.
-        </p>
-      </div>
-      <div class="cookie-actions">
-        <button class="cookie-btn ghost" id="cookieReject">Reject</button>
-        <button class="cookie-btn" id="cookieAccept">Accept</button>
-      </div>
+  <div class="cookie-inner">
+
+    <p>
+      This site uses cookies and embedded media
+      (YouTube, Instagram, Spotify, SoundCloud).
+    </p>
+
+    <div class="cookie-actions">
+      <button id="cookieAcceptAll" class="cookie-btn">Accept all</button>
+      <button id="cookieOpenSettings" class="cookie-btn ghost">Settings</button>
     </div>
+
+  </div>
   `;
 
   document.body.appendChild(banner);
 
-  document.getElementById("cookieAccept").addEventListener("click", () => {
-    setConsent("accepted");
+  document.getElementById("cookieAcceptAll").onclick = () => {
+    savePreferences({ essential:true, media:true });
     banner.remove();
-  });
+  };
 
-  document.getElementById("cookieReject").addEventListener("click", () => {
-    setConsent("rejected");
+  document.getElementById("cookieOpenSettings").onclick = () => {
     banner.remove();
-  });
+    renderCookieModal();
+  };
 }
 
-function openCookieSettings() {
-  // simple v1: just re-show banner by clearing preference
-  localStorage.removeItem(COOKIE_KEY);
-  renderCookieBanner();
+/* ---------- MODAL ---------- */
+
+function renderCookieModal(){
+
+  const modal = document.createElement("div");
+  modal.className = "cookie-modal";
+
+  modal.innerHTML = `
+  <div class="cookie-panel">
+
+    <h2>Cookie preferences</h2>
+
+    <div class="cookie-option">
+      <label>
+        <input type="checkbox" checked disabled>
+        Essential cookies (required)
+      </label>
+    </div>
+
+    <div class="cookie-option">
+      <label>
+        <input type="checkbox" id="mediaToggle">
+        Media embeds (YouTube, Instagram, Spotify, SoundCloud)
+      </label>
+    </div>
+
+    <div class="cookie-modal-actions">
+      <button id="cookieSave" class="cookie-btn">Save preferences</button>
+    </div>
+
+  </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  document.getElementById("cookieSave").onclick = () => {
+
+    const media = document.getElementById("mediaToggle").checked;
+
+    savePreferences({
+      essential:true,
+      media:media
+    });
+
+    modal.remove();
+  };
 }
 
-document.addEventListener("click", e => {
+/* ---------- OPEN SETTINGS ---------- */
+
+function openCookieSettings(){
+  renderCookieModal();
+}
+
+document.addEventListener("click", e=>{
   if(e.target.classList.contains("cookie-open-settings")){
     openCookieSettings();
   }
 });
 
-window.addEventListener("cookie:change", () => {
-  location.reload();
-});
+/* ---------- INIT ---------- */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
   renderCookieBanner();
-
-  const btn = document.getElementById("openCookieSettings");
-  if (btn) btn.addEventListener("click", openCookieSettings);
 });

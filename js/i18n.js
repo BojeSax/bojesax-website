@@ -78,7 +78,7 @@ const translations = {
       "Cookies are small files stored on your device to remember preferences and improve the browsing experience.",
     cookies_used: "Cookies used",
     cookies_used_text:
-      "This site uses essential cookies and embedded services (YouTube, Spotify, Instagram) which may set their own cookies.",
+      "This site uses essential cookies and embedded services (YouTube, Spotify, Instagram and SoundCloud) which may set their own cookies.",
     cookies_manage: "Manage cookies",
     cookies_manage_text:
       "You can accept or reject cookies via the cookie banner or manage them through your browser settings.",
@@ -152,7 +152,7 @@ const translations = {
       "Las cookies son pequeños archivos almacenados en tu dispositivo para recordar preferencias y mejorar la experiencia.",
     cookies_used: "Cookies utilizadas",
     cookies_used_text:
-      "Este sitio utiliza cookies esenciales y servicios embebidos (YouTube, Spotify, Instagram) que pueden establecer sus propias cookies.",
+      "Este sitio utiliza cookies esenciales y servicios embebidos (YouTube, Spotify, Instagram y SoundCloud) que pueden establecer sus propias cookies.",
     cookies_manage: "Gestionar cookies",
     cookies_manage_text:
       "Puedes aceptar o rechazar cookies desde el banner o gestionarlas en la configuración de tu navegador.",

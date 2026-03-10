@@ -57,7 +57,7 @@ async function loadVideoContent() {
     wrap.innerHTML = sorted.map(renderOneVideo).join("");
 
     // process instagram embeds after DOM injection
-    if (cookiesAccepted() && window.instgrm && window.instgrm.Embeds) {
+    if (mediaAllowed() && window.instgrm && window.instgrm.Embeds) {
       window.instgrm.Embeds.process();
     } 
   }
@@ -111,7 +111,7 @@ async function loadVideoContent() {
       <article class="video-card">
   
         <div class="video-embed">
-          ${cookiesAccepted() ? embed : renderBlockedVideo()}
+          ${mediaAllowed() ? embed : renderBlockedVideo()}
         </div>
   
         ${text ? `<p class="video-text">${escapeHtml(text)}</p>` : ""}
@@ -160,3 +160,9 @@ async function loadVideoContent() {
     return match ? match[1] : null;
   }
 
+  window.addEventListener("cookie:change", () => {
+    const data = window.__videoData;
+    if (!data) return;
+  
+    renderVideoCards(data?.cards);
+  });

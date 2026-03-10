@@ -1,6 +1,6 @@
 /admin   /admin/index.html   200
 
-/about   /index.html#about   301
+/about   /index.html#about   200
 
 /music    /music.html   200
 /music/   /music.html   200

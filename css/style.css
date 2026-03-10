@@ -436,8 +436,6 @@ border-top: 2px solid var(--color-accent);}
 .about-grid img{
   width:100%;
   height:auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
   display:block;
   border-radius:8px;
   opacity:0;
@@ -792,8 +790,6 @@ border-top: 2px solid var(--color-accent);}
   display:block;
   transition:transform .6s ease;
   cursor:pointer;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
   display:block;
 }
 

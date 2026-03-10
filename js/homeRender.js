@@ -65,8 +65,11 @@ function renderSlider(slider) {
             src="${src}"
             class="d-block w-100 vh-100 object-fit-cover"
             alt="Böje performing live saxophone"
-            ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'}
+            loading="${index === 0 ? 'eager' : 'lazy'}"
+            fetchpriority="${index === 0 ? 'high' : 'auto'}"
             decoding="async"
+            width="1920"
+            height="1080"
           />
         </div>
       `

@@ -19,6 +19,14 @@
     {
       "image": "/assets/uploads/bojesax-2nn.jpg",
       "order": 1
+    },
+    {
+      "order": 4,
+      "image": "/assets/uploads/boje-2d.webp"
+    },
+    {
+      "order": 5,
+      "image": "/assets/uploads/boje-3.webp"
     }
   ]
 }

@@ -31,4 +31,37 @@ function highlightCurrentPage() {
 
 }
 
+function scrollToSectionFromPath() {
+  const path = window.location.pathname.replace(/^\/|\/$/g, "");
+
+  if (!path) return;
+
+  const section = document.getElementById(path);
+  if (!section) return;
+
+  setTimeout(() => {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 100);
+}
+
+document.addEventListener("DOMContentLoaded", scrollToSectionFromPath);
+
+document.addEventListener("click", (e) => {
+  const link = e.target.closest("a[data-section-link]");
+  if (!link) return;
+
+  e.preventDefault();
+
+  const path = link.getAttribute("href").replace("/", "");
+  const section = document.getElementById(path);
+  if (!section) return;
+
+  history.pushState({}, "", `/${path}`);
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
+
 window.initNavigation = initNavigation;

@@ -10,11 +10,11 @@
   "photos": [
     {
       "image": "/assets/uploads/photo1.jpg",
-      "order": 3
+      "order": 2
     },
     {
       "image": "/assets/uploads/photo2.jpg",
-      "order": 2
+      "order": 3
     },
     {
       "image": "/assets/uploads/bojesax-2nn.jpg",

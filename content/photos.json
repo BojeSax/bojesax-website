@@ -25,7 +25,7 @@
       "image": "/assets/uploads/boje-2d.webp"
     },
     {
-      "order": 7,
+      "order": 3,
       "image": "/assets/uploads/boje-3.webp"
     },
     {
@@ -38,7 +38,7 @@
     },
     {
       "image": "/assets/uploads/slider2.webp",
-      "order": 1
+      "order": 8
     }
   ]
 }

@@ -106,7 +106,12 @@ async function loadMusicContent() {
     return `
       <div class="embed-blocked">
         <p>This content requires cookies to be accepted.</p>
-        <button class="cookie-open-settings">Enable cookies</button>
+        <button
+          class="cookie-open-settings"
+          type="button"
+          aria-label="Open cookie settings">
+          Enable cookies
+        </button>
       </div>
     `;
   }

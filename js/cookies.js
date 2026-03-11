@@ -33,8 +33,8 @@ function renderCookieBanner(){
     </p>
 
     <div class="cookie-actions">
-      <button id="cookieAcceptAll" class="cookie-btn">Accept all</button>
-      <button id="cookieOpenSettings" class="cookie-btn ghost">Settings</button>
+      <button type="button" id="cookieAcceptAll" class="cookie-btn">Accept all</button>
+      <button type="button" id="cookieOpenSettings" class="cookie-btn ghost">Settings</button>
     </div>
 
   </div>

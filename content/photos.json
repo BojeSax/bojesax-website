@@ -39,6 +39,10 @@
     {
       "image": "/assets/uploads/slider2.webp",
       "order": 8
+    },
+    {
+      "order": 9,
+      "image": "/assets/uploads/foto-portada-taiwan-boje.webp"
     }
   ]
 }

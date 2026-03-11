@@ -1023,8 +1023,20 @@ footer p {
 }
 
 @media (max-width: 768px){
-  .cookie-inner{ flex-direction: column; align-items: stretch; }
-  .cookie-actions{ justify-content: flex-end; }
+  .cookie-banner{
+    width:94%;
+    bottom:12px;
+    padding:18px;
+  }
+
+  .cookie-actions{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .cookie-btn{
+    width:100%;
+  }
 }
 
 /* COOKIE MODAL */

@@ -10,23 +10,35 @@
   "photos": [
     {
       "image": "/assets/uploads/photo1.jpg",
-      "order": 2
+      "order": 1
     },
     {
       "image": "/assets/uploads/photo2.jpg",
-      "order": 3
+      "order": 2
     },
     {
       "image": "/assets/uploads/bojesax-2nn.jpg",
-      "order": 1
+      "order": 7
     },
     {
       "order": 4,
       "image": "/assets/uploads/boje-2d.webp"
     },
     {
-      "order": 5,
+      "order": 7,
       "image": "/assets/uploads/boje-3.webp"
+    },
+    {
+      "image": "/assets/uploads/slider1.webp",
+      "order": 6
+    },
+    {
+      "image": "/assets/uploads/slider3.webp",
+      "order": 5
+    },
+    {
+      "image": "/assets/uploads/slider2.webp",
+      "order": 1
     }
   ]
 }

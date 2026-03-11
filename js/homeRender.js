@@ -59,6 +59,13 @@ function renderSlider(slider) {
     return;
   }
 
+    // PRELOAD the first hero image so the browser starts downloading it early
+    const preload = document.createElement("link");
+    preload.rel = "preload";
+    preload.as = "image";
+    preload.href = paths[0];
+    document.head.appendChild(preload);
+
   // Render ONLY the first image immediately
   carouselInner.innerHTML = `
     <div class="carousel-item active">

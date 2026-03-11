@@ -38,8 +38,10 @@ function startSlider() {
 }
 
 function renderSlider(slider) {
+
   const carouselEl = document.getElementById("heroCarousel");
   const carouselInner = carouselEl?.querySelector(".carousel-inner");
+
   if (!carouselEl || !carouselInner) return;
 
   if (!Array.isArray(slider) || slider.length === 0) {
@@ -57,26 +59,46 @@ function renderSlider(slider) {
     return;
   }
 
-  carouselInner.innerHTML = paths
-    .map(
-      (src, index) => `
-        <div class="carousel-item ${index === 0 ? "active" : ""}">
+  // Render ONLY the first image immediately
+  carouselInner.innerHTML = `
+    <div class="carousel-item active">
+      <img
+        src="${paths[0]}"
+        alt="Böje performing live saxophone"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        width="1920"
+        height="1080"
+      />
+    </div>
+  `;
+
+  // Load remaining slides AFTER first paint
+  requestAnimationFrame(() => {
+
+    const restSlides = paths
+      .slice(1)
+      .map(src => `
+        <div class="carousel-item">
           <img
             src="${src}"
-            class="d-block w-100 vh-100 object-fit-cover"
             alt="Böje performing live saxophone"
-            loading="${index === 0 ? 'eager' : 'lazy'}"
-            fetchpriority="${index === 0 ? 'high' : 'auto'}"
+            loading="lazy"
             decoding="async"
             width="1920"
             height="1080"
           />
         </div>
-      `
-    )
-    .join("");
+      `)
+      .join("");
 
-  startSlider();
+    carouselInner.insertAdjacentHTML("beforeend", restSlides);
+
+    startSlider();
+
+  });
+
 }
 
 function renderAbout(image, paragraphs) {

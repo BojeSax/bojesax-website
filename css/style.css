@@ -391,7 +391,7 @@ a {
   }
 
   .carousel-item.active img{
-    transform:scale(1.02);
+    transform:scale(.98);
   }
 
   .hero-content{

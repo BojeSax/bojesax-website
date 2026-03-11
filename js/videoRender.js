@@ -124,7 +124,12 @@ async function loadVideoContent() {
     return `
       <div class="embed-blocked">
         <p>This video requires cookies to be accepted.</p>
-        <button class="cookie-open-settings">Enable cookies</button>
+        <button
+          class="cookie-open-settings"
+          type="button"
+          aria-label="Open cookie settings">
+          Enable cookies
+        </button>
       </div>
     `;
   }

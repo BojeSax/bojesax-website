@@ -25,10 +25,10 @@ async function loadPhotos() {
   container.innerHTML = data.photos
     .sort((a, b) => a.order - b.order)
     .map((photo, index) => `
-      <div class="photo-card reveal">
+      <div class="photo-card reveal" data-index="${index}">
         <img
           src="${photo.image}"
-          alt="Böje live sax photo ${index + 1}"
+          alt="Live saxophone performance photo of Böje"
           loading="lazy"
           decoding="async"
           width="1200"
@@ -41,6 +41,40 @@ async function loadPhotos() {
   if (window.initReveal) {
     window.initReveal();
   }
+
+  setTimeout(() => {
+
+    const images = document.querySelectorAll("#photosGrid img");
+  
+    images.forEach(img => {
+  
+      const card = img.parentElement;
+  
+      const applyLayout = () => {
+  
+        const ratio = img.naturalWidth / img.naturalHeight;
+  
+        if (ratio > 1.3) {
+          card.classList.add("photo-wide");
+        } 
+        else if (ratio < 0.8) {
+          card.classList.add("photo-tall");
+        } 
+        else {
+          card.classList.add("photo-big");
+        }
+  
+      };
+  
+      if (img.complete) {
+        applyLayout();
+      } else {
+        img.onload = applyLayout;
+      }
+  
+    });
+  
+  },100);
 }
 
 document.addEventListener("DOMContentLoaded", loadPhotos);

@@ -35,6 +35,7 @@ const translations = {
     contact_email: "Email",
     contact_message: "Describe your request",
     contact_submit: "Send Request",
+    contact_presskit_label: "More Info",
 
     // LEGAL
     legal_title: "Legal Notice",
@@ -109,6 +110,7 @@ const translations = {
     contact_email: "Email",
     contact_message: "Describe tu solicitud",
     contact_submit: "Enviar solicitud",
+    contact_presskit_label: "Más Info",
 
     // LEGAL
     legal_title: "Aviso legal",
